@@ -43,3 +43,16 @@ void clearScreen()
 {
     cout << "\033[2J\033[H";
 }
+
+void trimWhitespace(char* str)
+{
+    int length = 0;
+    while (str[length] != '\0')
+    {
+        length++;
+    }
+    while (length > 0 && str[length - 1] <= ' ')
+    {
+        str[--length] = '\0';
+    }
+}
